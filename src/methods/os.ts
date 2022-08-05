@@ -11,3 +11,5 @@ export const getOS = (): OS => {
   // if (navigator.userAgentData.platform.indexOf('Linux') !== -1) OSName = 'linux';
   return OSName;
 };
+
+export const isMac = getOS() === 'mac';
