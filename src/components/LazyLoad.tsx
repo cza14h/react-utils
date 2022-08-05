@@ -9,10 +9,10 @@ type LoadableProps = {
 
 export function Loadable({ loader, loading }: LoadableProps): ComponentType<any> {
   const Com = lazy(loader);
-  return function () {
+  return function (props: any) {
     return (
       <Suspense fallback={loading()}>
-        <Com {...this.props} />
+        <Com {...props} />
       </Suspense>
     );
   };
